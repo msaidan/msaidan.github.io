@@ -1,2 +1,64 @@
-# msaidan.github.io
-Professional website of Dr Muhammad Ali Majeed-Saidan — paediatrics, neonatal medicine, research and writing.
+# Dr Muhammad Ali Majeed-Saidan — professional research website
+
+A responsive, accessible, buildless academic website covering paediatrics, neonatal medicine, congenital anomalies, birth-defect surveillance and environmental toxicology. The public name follows his publications; the alternative spelling provided for the project is included in structured metadata.
+
+## Features
+
+- Editorial design with original SVG artwork, system fonts and no third-party scripts.
+- Biography, qualifications and dated career history drawn from the supplied CV and public professional sources.
+- A detailed background page covering teaching, service, departmental recognition and two Arabic books.
+- 34 verified bibliographic entries spanning 1974–2025, including early methylmercury research.
+- Searchable bibliography with topic/year filtering, pagination and copyable citations.
+- Journal/DOI and PubMed links, plus a downloadable BibTeX bibliography.
+- Semantic HTML, keyboard navigation, reduced-motion support and print styles.
+- Responsive layout and relative asset paths suitable for a GitHub project Pages site.
+- Dated photo stories, beginning with the British Museum visit on 7 November 2026.
+- No tracking, cookies, forms, paid services or runtime dependencies.
+
+## Deployment layout
+
+The website is prepared for the public organisation repository `msaidan/msaidan.github.io`. Place this folder’s contents directly at the repository root on the `main` branch. The intended live address is `https://msaidan.github.io/`. Local navigation and asset paths are relative; canonical and social-sharing URLs point to this root website.
+
+## Publish on GitHub Pages
+
+1. Create or use the **public** repository `msaidan.github.io` under the `msaidan` organisation, giving the full repository name `msaidan/msaidan.github.io`.
+2. Upload or push this folder’s source files directly to the repository root on its `main` branch. Include `index.html`, `background.html`, `.nojekyll`, `assets/`, `data/` and `stories/`. Do not nest them inside another website folder, and do not upload `dist/`, `.openai/` or `node_modules/`.
+3. Open **Settings → Pages → Build and deployment**.
+4. Choose **Deploy from a branch**, select **main** and **/ (root)**, then save.
+5. Wait for GitHub’s Pages deployment to finish, then verify the live website at `https://msaidan.github.io/` using the address shown in Settings → Pages.
+
+The source files are already the deployable website; a build or custom Actions workflow is not needed for branch-based Pages publishing. The repository name must be `msaidan.github.io` to use the organisation’s root Pages address. Keep `.nojekyll` in the root. No `CNAME` is needed for this GitHub-provided address.
+
+## Local development
+
+Open `index.html` directly, or use any static web server. The publications are rendered into HTML and do not depend on a `fetch()` call, so the page works from disk and without JavaScript. JavaScript adds filtering and pagination.
+
+With Node 18 or newer, `npm run build` copies the public site to `dist/` for preview or another static host. No package installation is necessary. Run `npm run check` to check the local asset links, publication identifiers and basic metadata.
+
+## Editing
+
+| File | Purpose |
+| --- | --- |
+| `index.html` | Profile text, links, research sections and pre-rendered publication list |
+| `background.html` | Qualifications, career history, teaching, service and Arabic books |
+| `assets/background.css` | Background page styling |
+| `assets/styles.css` | Design and responsive layout |
+| `assets/stories.css` | Photo-story and homepage story feature styling |
+| `stories/british-museum-2026-11-07.html` | British Museum photo story with all six supplied photographs |
+| `assets/photos/british-museum-2026-11-07/` | Supplied original photographs, with descriptive filenames |
+| `assets/app.js` | Mobile navigation, filters, pagination and citation copying |
+| `assets/research-art.svg` | Original decorative artwork; replace with an approved portrait if desired |
+| `data/publications.json` | Bibliographic source data |
+| `data/publications.bib` | Downloadable BibTeX references |
+| `scripts/render-publications.py` | Regenerates the publication HTML and BibTeX from JSON |
+| `docs/research-notes.md` | Evidence, identity checks, editorial decisions and facts needing confirmation |
+
+To update the bibliography, edit `data/publications.json`, run `python scripts/render-publications.py`, then run the build/check commands. Each record requires a source URL and should be checked against a publisher or PubMed record. Older records without verified DOIs use their PubMed identifiers. Historical M A Majeed/M A Majid aliases are accepted only for the specific records connected by the supplied CV. Publication topics are editorial classifications, not publisher keywords.
+
+## Editorial boundaries
+
+This is a professional research profile. It does not advertise active clinical practice. A CV has been supplied and used for professional history; it includes information from several periods despite an older filename. Current appointments and preferred public contact details remain unconfirmed. The low-resolution embedded portrait is not used as a hero image. Old institutional email addresses and citation metrics have not been presented as current. The supplied Google Scholar URL is preserved, but its contents could not be accessed during preparation.
+
+Qualification dates and departmental recognitions follow the supplied CV. No university appointment, professor title, current clinical registration, retirement status or complete lifetime publication count is inferred. Similarly named authors are excluded. Refer to `docs/research-notes.md` before adding biographical claims.
+
+Prepared 7 November 2026. Website content and bibliography should be reviewed periodically by the profile owner.
